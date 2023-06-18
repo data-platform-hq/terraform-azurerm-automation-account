@@ -73,11 +73,12 @@ No modules.
 
 ## Outputs
 
-| Name                                                                                                                          | Description                                          |
-| ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
-| <a name="output_name"></a> [name](#output\_name) | The Name of the Automation Account.   |
-| <a name="output_id"></a> [id](#output\_id) | The identity of the Automation Account.  |
-| <a name="output_identity"></a> [identity](#output\_identity) | The identity of the Automation Account.  |
+| Name                                                                             | Description                             |
+|----------------------------------------------------------------------------------|-----------------------------------------|
+| <a name="output_name"></a> [name](#output\_name)                                 | The Name of the Automation Account.     |
+| <a name="output_id"></a> [id](#output\_id)                                       | The ID of the Automation Account.       |
+| <a name="output_resource_group"></a> [resource\_group](#output\_resource\_group) | Resource group of Automation Account.   |
+| <a name="output_identity"></a> [identity](#output\_identity)                     | The identity of the Automation Account. |
 <!-- END_TF_DOCS -->
 
 ## License
