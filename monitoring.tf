@@ -1,7 +1,3 @@
-locals {
-  diagnostics_name = var.custom_diagnostics_name == null ? "${var.project}-${var.env}-${var.location}" : var.custom_diagnostics_name
-}
-
 data "azurerm_monitor_diagnostic_categories" "this" {
   count = var.enable_diagnostic_setting ? 1 : 0
 
@@ -11,7 +7,7 @@ data "azurerm_monitor_diagnostic_categories" "this" {
 resource "azurerm_monitor_diagnostic_setting" "this" {
   count = var.enable_diagnostic_setting ? 1 : 0
 
-  name                           = local.diagnostics_name
+  name                           = coalesce(var.diagnostic_settings_name, "ds-${var.automation_account_name}")
   target_resource_id             = azurerm_automation_account.this.id
   log_analytics_workspace_id     = var.log_analytics_workspace_id
   log_analytics_destination_type = var.analytics_destination_type

@@ -1,10 +1,5 @@
-locals {
-  suffix                  = length(var.suffix) == 0 ? "" : "-${var.suffix}"
-  automation_account_name = var.custom_automation_account_name == null ? "automation-${var.project}-${var.env}-${var.location}${local.suffix}" : "${var.custom_automation_account_name}${local.suffix}"
-}
-
 resource "azurerm_automation_account" "this" {
-  name                          = local.automation_account_name
+  name                          = var.automation_account_name
   location                      = var.location
   resource_group_name           = var.resource_group
   sku_name                      = var.sku
@@ -13,5 +8,17 @@ resource "azurerm_automation_account" "this" {
 
   identity {
     type = "SystemAssigned"
+  }
+}
+
+resource "azurerm_automation_module" "this" {
+  for_each = var.automation_modules
+
+  name                    = each.key
+  resource_group_name     = var.resource_group
+  automation_account_name = azurerm_automation_account.this.name
+
+  module_link {
+    uri = each.value
   }
 }
