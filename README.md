@@ -17,7 +17,6 @@ module "automation_account" {
   source = "data-platform-hq/automation-account/azurerm"
   version = "~> 1.0"
 
-  
   location = "eastus"
   automation_account_name    = "example-name-datahq"
   resource_group             = data.azurerm_resource_group.example.name
