@@ -56,9 +56,9 @@ variable "analytics_destination_type" {
 }
 
 variable "automation_modules" {
-  type        = list(object({
+  type = list(object({
     name = string
-    uri = string
+    uri  = string
   }))
   default     = []
   description = "Map of automation modules"

@@ -57,7 +57,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_analytics_destination_type"></a> [analytics\_destination\_type](#input\_analytics\_destination\_type) | Log analytics destination type | `string` | `"Dedicated"` | no |
 | <a name="input_automation_account_name"></a> [automation\_account\_name](#input\_automation\_account\_name) | Specifies the name of the Automation account resource | `string` | n/a | yes |
-| <a name="input_automation_modules"></a> [automation\_modules](#input\_automation\_modules) | Map of automation modules | <pre>list(object({<br>    name = string<br>    uri = string<br>  }))</pre> | `[]` | no |
+| <a name="input_automation_modules"></a> [automation\_modules](#input\_automation\_modules) | Map of automation modules | <pre>list(object({<br>    name = string<br>    uri  = string<br>  }))</pre> | `[]` | no |
 | <a name="input_diagnostic_settings_name"></a> [diagnostic\_settings\_name](#input\_diagnostic\_settings\_name) | Name for Diagnostic Settings that monitors Automation Account | `string` | `null` | no |
 | <a name="input_enable_diagnostic_setting"></a> [enable\_diagnostic\_setting](#input\_enable\_diagnostic\_setting) | Enable diagnostic setting; var.analytics\_workspace\_id have to be provided | `bool` | `false` | no |
 | <a name="input_location"></a> [location](#input\_location) | Azure location | `string` | n/a | yes |

@@ -13,14 +13,14 @@ resource "azurerm_automation_account" "this" {
 
 resource "azurerm_automation_module" "this" {
   for_each = {
-    for i in var.automation_modules : (i.name) => i.uri  if i.name != null
+    for i in var.automation_modules : i.name => i if i.name != null
   }
 
-  name                    = each.key
+  name                    = each.value.name
   resource_group_name     = var.resource_group
   automation_account_name = azurerm_automation_account.this.name
 
   module_link {
-    uri = each.value
+    uri = each.value.uri
   }
 }
