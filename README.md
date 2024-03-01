@@ -17,10 +17,9 @@ module "automation_account" {
   source = "data-platform-hq/automation-account/azurerm"
   version = "~> 1.0"
 
-  project  = "datahq"
-  env      = "example"
-  location = "eastus"
   
+  location = "eastus"
+  automation_account_name    = "example-name-datahq"
   resource_group             = data.azurerm_resource_group.example.name
   enable_diagnostic_setting  = true
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.example.id
