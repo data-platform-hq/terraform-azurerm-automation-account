@@ -12,7 +12,9 @@ resource "azurerm_automation_account" "this" {
 }
 
 resource "azurerm_automation_module" "this" {
-  for_each = var.automation_modules
+  for_each = {
+    for i in var.automation_modules : (i.name) => i.uri  if i.name != null
+  }
 
   name                    = each.key
   resource_group_name     = var.resource_group

@@ -17,7 +17,6 @@ variable "tags" {
 variable "automation_account_name" {
   type        = string
   description = "Specifies the name of the Automation account resource"
-  default     = null
 }
 
 variable "sku" {
@@ -57,7 +56,10 @@ variable "analytics_destination_type" {
 }
 
 variable "automation_modules" {
-  type        = map(string)
-  default     = {}
+  type        = list(object({
+    name = string
+    uri = string
+  }))
+  default     = []
   description = "Map of automation modules"
 }
