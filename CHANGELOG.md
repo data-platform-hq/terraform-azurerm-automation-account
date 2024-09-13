@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/data-platform-hq/terraform-azurerm-automation-account/compare/v1.0.2...v1.1.0) (2024-09-13)
+
+
+### Bug Fixes
+
+* added security KICS scan action ([0aa1400](https://github.com/data-platform-hq/terraform-azurerm-automation-account/commit/0aa140083110ffe18f880952f6d46a04ba790d61))
+
+
+### Features
+
+* upgrade to azurerm v4 ([67f8e29](https://github.com/data-platform-hq/terraform-azurerm-automation-account/commit/67f8e295b0fdccfd3b9f7ce9734b7295f569a031))
+
 ## [1.0.2](https://github.com/data-platform-hq/terraform-azurerm-automation-account/compare/v1.0.1...v1.0.2) (2024-03-04)
 
 
